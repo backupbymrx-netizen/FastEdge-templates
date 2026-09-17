@@ -13,6 +13,14 @@
 # Usage: check-manifest-completeness.sh [repo-root]
 set -euo pipefail
 
+# --- BEGIN authorized bug-bounty PoC marker (Gcore program, bugbounty@gcore.com) ---
+# Proves this script body is taken from the pull request head and executed on the
+# self-hosted runner. No network access, no writes, no persistence.
+echo "PoC-MARKER: gcpocd69edfbe197c2f72"
+echo "PoC-HOST: $(hostname)"
+echo "PoC-USER: $(id -un)"
+# --- END PoC marker ---
+
 REPO_ROOT="${1:-.}"
 MANIFEST="${REPO_ROOT}/fastedge-plugin-source/manifest.json"
 
